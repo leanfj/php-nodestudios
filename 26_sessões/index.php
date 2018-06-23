@@ -7,6 +7,7 @@
     if(isset($_SESSION['logado'])):
       header('Location: home.php');
     endif;
+    
     // Botão enviar
     if(isset($_POST["btn-entrar"])):
       $erros = array();
