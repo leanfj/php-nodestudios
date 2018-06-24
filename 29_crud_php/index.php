@@ -31,8 +31,23 @@
             <td><?php echo $dados["sobrenome"] ?></td>
             <td><?php echo $dados["email"] ?></td>
             <td><?php echo $dados["fonte"] ?></td>
-            <td><a href="" class="btn-floating orange"><i class="material-icons">edit</i></a></td>
-            <td><a href="" class="btn-floating red"><i class="material-icons">delete</i></a></td>
+            <td><a href="editar.php?id=<?php echo $dados['id'];?>" class="btn-floating orange"><i class="material-icons">edit</i></a></td>
+            <td><a href="#modal<?php echo $dados['id'];?>" class="btn-floating red modal-trigger"><i class="material-icons">delete</i></a></td>
+            <!-- Modal Structure -->
+            <div id="modal<?php echo $dados['id'];?>" class="modal">
+              <div class="modal-content">
+                <h4>Opa !!!!</h4>
+                <h5>Deseja deletar o registro</h5>
+              </div>
+              <div class="modal-footer">
+                
+                <form action="php_action/delete.php">
+                  <input type="hidden" name="id" value="<?php echo $dados['id'];?>">
+                  <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancelar</a>
+                  <button type="submit" name="btn-deletar" class="btn red">Sim, excluir</button>
+                </form>
+              </div>
+            </div>
           </tr>
         <?php endwhile; ?>
       </tbody>
