@@ -7,23 +7,23 @@
     <h1 class="light">Adcionar Cliente</h1>
     <form action="php_action/create.php" method="POST">
       <div class="input-field col s12">
-        <input type="text"  name="nome" id="nome">
+        <input type="text"  name="nome" id="nome" required>
         <label for="nome">Nome</label>
       </div>
       <div class="input-field col s12">
-        <input type="text"  name="sobrenome" id="sobrenome">
+        <input type="text"  name="sobrenome" id="sobrenome" required>
         <label for="sobrenome">Sobrenome</label>
       </div>
       <div class="input-field col s12">
-        <input type="email"  name="email" id="email">
+        <input type="email"  name="email" id="email" required>
         <label for="email">Email</label>
       </div>
       <div class="input-field col s12">
-        <input type="text"  name="fonte" id="fonte">
+        <input type="text"  name="fonte" id="fonte" required>
         <label for="fonte">Fonte</label>
       </div>
       <button class="btn" type="submit" name="btn-cadastrar">Cadastrar</button>
-      <a href="index.php" class="btn orange">Lista de Clientesr</a>
+      <a href="index.php" class="btn orange">Lista de Clientes</a>
     </form>
   </div>
 </div>

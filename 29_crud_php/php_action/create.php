@@ -1,5 +1,5 @@
 <?php
-
+  session_start();
   require_once "./db_connect.php";
 
   if(isset($_POST["btn-cadastrar"])):
@@ -11,8 +11,10 @@
     $sql = "INSERT INTO clientes (nome, sobrenome, email, fonte) VALUES ('$nome', '$sobrenome', '$email', '$fonte')";
 
     if(mysqli_query($connect, $sql)):
-      header('Location: ../index.php?sucesso');
+      $_SESSION["msg"] = "Cadastrado com sucesso";
+      header('Location: ../index.php');
     else:
-      header('Location: ../index.php?erro');
+      $_SESSION["msg"] = "Erro ao cadastrar";
+      header('Location: ../index.php');
     endif;
   endif;
