@@ -26,7 +26,7 @@
       </tbody>
     </table>
     <br>
-    <a href="#" class="btn">Adcionar Cliente</a>
+    <a href="adcionar.php" class="btn">Adcionar Cliente</a>
   </div>
 </div>
 
