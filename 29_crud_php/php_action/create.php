@@ -1,22 +1,22 @@
 <?php
-  session_start();
-  
-  require_once "./db_connect.php";
-  require_once "../includes/functions.php";
+session_start();
 
-  if(isset($_POST["btn-cadastrar"])):
-    $nome = clear( $_POST["nome"]);
-    $sobrenome = clear( $_POST["sobrenome"]);
-    $email = clear( $_POST["email"]);
-    $fonte = clear( $_POST["fonte"]);
+require_once "./db_connect.php";
+require_once "../includes/functions.php";
 
-    $sql = "INSERT INTO clientes (nome, sobrenome, email, fonte) VALUES ('$nome', '$sobrenome', '$email', '$fonte')";
+if (isset($_POST["btn-cadastrar"])) :
+  $nome = clear($_POST["nome"]);
+  $sobrenome = clear($_POST["sobrenome"]);
+  $email = clear($_POST["email"]);
+  $fonte = clear($_POST["fonte"]);
 
-    if(mysqli_query($connect, $sql)):
-      $_SESSION["msg"] = "Cadastrado com sucesso";
-      header('Location: ../index.php');
-    else:
-      $_SESSION["msg"] = "Erro ao cadastrar";
-      header('Location: ../index.php');
-    endif;
+  $sql = "INSERT INTO clientes (nome, sobrenome, email, fonte) VALUES ('$nome', '$sobrenome', '$email', '$fonte')";
+
+  if (mysqli_query($connect, $sql)) :
+    $_SESSION["msg"] = "Cadastrado com sucesso";
+    header('Location: ../index.php');
+  else :
+    $_SESSION["msg"] = "Erro ao cadastrar";
+    header('Location: ../index.php');
   endif;
+endif;
