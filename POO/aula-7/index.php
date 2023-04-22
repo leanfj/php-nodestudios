@@ -7,14 +7,19 @@ class Veiculo
     private $cor;
     public $ano;
 
-    public function Andar($como)
+    protected function Andar($como)
     {
         echo "Andar " . $como . PHP_EOL;
     }
 
-    public function Parar()
+    private function Parar()
     {
         echo "Parou " . PHP_EOL;
+    }
+
+    public function AcaoParar()
+    {
+        $this->Parar();
     }
 
     public function setCor($cor): void
@@ -79,7 +84,7 @@ $uno->setModelo("Mille");
 var_dump($uno);
 
 $uno->Andar("Com 4 rodas");
-$uno->Parar();
+$uno->AcaoParar();
 
 echo "<hr>";
 
@@ -91,7 +96,7 @@ $cb500->setModelo("XTi") ;
 var_dump($cb500);
 
 $cb500->Andar("Com 2 rodas");
-$cb500->Parar();
+$cb500->AcaoParar();
 
 $cb500->DarGrau();
 
