@@ -1,11 +1,11 @@
 <?php
 
+require 'classes/Produto.php';
+require 'models/Produto.php';
 
 use classes\Produto as ProdutoClass;
 use models\Produto as ProdutoModel;
 
-require 'classes/Produto.php';
-require 'models/Produto.php';
 
 $produtoClasses = new ProdutoClass();
 
